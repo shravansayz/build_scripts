@@ -14,4 +14,4 @@ cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/Ke
 # build
 /opt/crave/resync.sh
 . build/envsetup.sh
-brunch RMX1901-ap1a-user
+brunch statix_RMX1901-ap1a-user
