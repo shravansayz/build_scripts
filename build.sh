@@ -1,17 +1,24 @@
-#!/bin/bash
+rm -rf .repo/local_manifests/ 
 
-#removals
-rm -rf .repo/local_manifests
+# Clone DerpFest
+repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --depth=1
 
-#sync
-repo init -u https://github.com/StatiXOS/android_manifest.git -b udc-qpr2 --git-lfs --depth=1
-git clone https://github.com/shravansayz/local_manifests.git -b test .repo/local_manifests
-repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
+# Clone local_manifests repository
+git clone https://github.com/shravansayz/local_manifests --depth 1 -b derp14 .repo/local_manifests
+if [ ! 0 == 0 ]
+ then   curl -o .repo/local_manifests https://github.com/shravansayz/local_manifests.git
+ fi
 
-#ksu
-cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash - && cd ../../..
-
-# build
+# repo sync
 /opt/crave/resync.sh
-. build/envsetup.sh
-brunch statix_RMX1901-ap1a-user
+
+source build/envsetup.sh
+
+# brunch configuration
+lunch derp_RMX1901-user
+
+# Clean
+make installclean
+
+# Run
+mka derp
