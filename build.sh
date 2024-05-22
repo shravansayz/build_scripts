@@ -1,24 +1,25 @@
-rm -rf .repo/local_manifests/ 
+#!/bin/bash
 
-# Clone DerpFest
-repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --depth=1
+#removals
+rm -rf .repo/local_manifests
 
-# Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests --depth 1 -b derp14 .repo/local_manifests
-if [ ! 0 == 0 ]
- then   curl -o .repo/local_manifests https://github.com/shravansayz/local_manifests.git
- fi
+#sync
+repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs --depth=1
+git clone https://github.com/shravansayz/local_manifests.git -b pos .repo/local_manifests
+if [ -f /opt/crave/resync.sh ]; then
+  /opt/crave/resync.sh
+else
+  repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
+fi
 
-# repo sync
-/opt/crave/resync.sh
+#customs
+rm -rf frameworks/base
+git clone https://github.com/shravansayz/frameworks_base_pos.git frameworks/base --depth=1
 
-source build/envsetup.sh
+#ksu
+cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash - && cd ../../..
 
-# brunch configuration
-lunch derp_RMX1901-user
-
-# Clean
-make installclean
-
-# Run
-mka derp
+# build
+. build/envsetup.sh
+lunch aosp_RMX1901-ap1a-userdebug
+mka bacon
