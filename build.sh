@@ -14,7 +14,7 @@ fi
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_pos.git frameworks/base --depth=1
+git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen frameworks/base --depth=1
 
 #ksu
 cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash - && cd ../../..
