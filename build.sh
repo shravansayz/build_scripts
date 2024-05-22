@@ -26,4 +26,4 @@ m installclean
 mka bacon
 
 # crave build command
-crave run --no-patch "rm -rf build.sh && wget https://raw.githubusercontent.com/shravansayz/build_scripts/pos/build.sh && bash build.sh"
+#crave run --no-patch "rm -rf build.sh && wget https://raw.githubusercontent.com/shravansayz/build_scripts/pos/build.sh && bash build.sh"
