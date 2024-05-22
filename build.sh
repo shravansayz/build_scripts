@@ -22,4 +22,8 @@ cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/Ke
 # build
 . build/envsetup.sh
 lunch aosp_RMX1901-ap1a-userdebug
+m installclean
 mka bacon
+
+# crave build command
+crave run --no-patch "rm -rf build.sh && wget https://raw.githubusercontent.com/shravansayz/build_scripts/pos/build.sh && bash build.sh"
