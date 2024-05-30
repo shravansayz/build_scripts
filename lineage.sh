@@ -19,6 +19,9 @@ https://github.com/shravansayz/android_frameworks_base_los_ext.git -b lineage-21
 #ksu
 cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash - && cd ../../..
 
+#clone private keys
+rm -rf .android-certs && git clone https://github.com/shravansayz/private_keys.git -b main .android-certs
+
 # build
 . build/envsetup.sh
 lunch lineage_RMX1901-ap1a-userdebug
