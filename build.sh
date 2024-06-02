@@ -19,9 +19,6 @@ git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen fra
 rm -rf vendor/extra
 git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
 
-#ksu
-cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash - && cd ../../..
-
 # build
 . build/envsetup.sh
 lunch aosp_RMX1901-ap1a-userdebug
