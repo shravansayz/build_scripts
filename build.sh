@@ -17,7 +17,7 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen frameworks/base --depth=1
 
 rm -rf vendor/extra
-git clone https://github.com/shravansayz/vendor_extra -b main vendor/extra
+git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
 
 #rm -rf vendor/aosp/signing/keys
 #git clone https://github.com/shravansayz/vendor_sign-priv -b pos vendor/aosp/signing/keys
