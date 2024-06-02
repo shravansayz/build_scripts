@@ -19,9 +19,6 @@ git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen fra
 rm -rf vendor/extra
 git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
 
-#rm -rf vendor/aosp/signing/keys
-#git clone https://github.com/shravansayz/vendor_sign-priv -b pos vendor/aosp/signing/keys
-
 #ksu
 cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash - && cd ../../..
 
@@ -29,7 +26,4 @@ cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/Ke
 . build/envsetup.sh
 lunch aosp_RMX1901-ap1a-userdebug
 m installclean
-mka bacon
-
-# crave build command
-#crave run --no-patch "rm -rf build.sh && wget https://raw.githubusercontent.com/shravansayz/build_scripts/pos/build.sh && bash build.sh"
+make bacon
