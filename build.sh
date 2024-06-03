@@ -19,6 +19,9 @@ git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen fra
 rm -rf vendor/extra
 git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
 
+#rm -rf vendor/aosp/signing
+#git clone https://github.com/shravansayz/vendor_sign-priv.git -b pos vendor/aosp/signing
+
 # build
 . build/envsetup.sh
 lunch aosp_RMX1901-ap1a-userdebug
