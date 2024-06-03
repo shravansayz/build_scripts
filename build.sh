@@ -17,7 +17,7 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen frameworks/base --depth=1
 
 #Kernelsu
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5 && cd ../../..
+cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5 && cd ../../..
 
 rm -rf vendor/extra
 git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
