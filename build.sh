@@ -16,14 +16,12 @@ fi
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen frameworks/base --depth=1
 
-#Kernelsu
-cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5 && cd ../../..
 
 rm -rf vendor/extra
 git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
 
-#rm -rf vendor/aosp/signing
-#git clone https://github.com/shravansayz/vendor_sign-priv.git -b pos vendor/aosp/signing
+rm -rf vendor/aosp/signing
+git clone https://github.com/shravansayz/private_key.git -b main vendor/aosp/signing
 
 # build
 . build/envsetup.sh
