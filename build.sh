@@ -21,7 +21,7 @@ rm -rf vendor/extra
 git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
 
 rm -rf vendor/aosp/signing
-git clone https://github.com/shravansayz/private_key.git -b main vendor/aosp/signing
+git clone https://github.com/shravansayz/private_key.git -b main vendor/aosp/signing/keys
 
 # build
 . build/envsetup.sh
