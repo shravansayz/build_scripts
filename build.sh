@@ -37,4 +37,4 @@ make installclean
 # Build
 croot
 repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
-rise b
+rise sb
