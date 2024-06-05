@@ -18,7 +18,7 @@ fi
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_rise.git -b fourteen frameworks/base --depth=1
+git clone https://github.com/shravansayz/android_frameworks_base_rise.git -b fourteen frameworks/base --depth=1
 
 # Private Keys
 rm -rf vendor/lineage-priv && git clone https://github.com/shravansayz/vendor_lineage-priv vendor/lineage-priv
