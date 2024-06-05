@@ -3,9 +3,13 @@
 #removals
 rm -rf .repo/local_manifests
 
-#sync
-repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs --depth=1
-git clone https://github.com/shravansayz/local_manifests.git -b pos .repo/local_manifests
+# Initialize repo with specified manifest
+repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs --depth=1
+
+# Clone local_manifests repository
+git clone https://github.com/shravansayz/local_manifests --depth 1 -b rise .repo/local_manifests
+
+# Sync the repositories
 if [ -f /opt/crave/resync.sh ]; then
   /opt/crave/resync.sh
 else
@@ -14,17 +18,19 @@ fi
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen frameworks/base --depth=1
+git clone https://github.com/shravansayz/frameworks_base_rise.git -b fourteen frameworks/base --depth=1
 
+# Private Keys
+rm -rf vendor/lineage-priv && git clone https://github.com/shravansayz/vendor_lineage-priv vendor/lineage-priv
 
-rm -rf vendor/extra
-git clone https://github.com/shravansayz/vendor_extra -b master vendor/extra
+# Set up build environment
+source build/envsetup.sh
 
-rm -rf vendor/aosp/signing
-git clone https://github.com/shravansayz/private_key.git -b main vendor/aosp/signing/keys
+# Lunch configuration
+riseup RMX1901 user
+make installclean
 
-# build
-. build/envsetup.sh
-lunch aosp_RMX1901-ap1a-userdebug
-m installclean
-make bacon
+# Build
+croot
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
+rise b
