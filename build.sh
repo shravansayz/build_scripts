@@ -20,6 +20,10 @@ fi
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/android_frameworks_base_rise.git -b fourteen frameworks/base --depth=1
 
+# Custom Repos
+rm -rf build/make && git clone https://github.com/RisingOS-staging/android_build build/make --depth=1
+rm -rf vendor/rising && git clone https://github.com/RisingOS-staging/android_vendor_rising vendor/rising --depth=1
+
 # Private Keys
 rm -rf vendor/lineage-priv && git clone https://github.com/shravansayz/vendor_lineage-priv vendor/lineage-priv
 
