@@ -9,12 +9,8 @@ repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs --de
 # Clone local_manifests repository
 git clone https://github.com/shravansayz/local_manifests --depth 1 -b rise .repo/local_manifests
 
-# Sync the repositories
-if [ -f /opt/crave/resync.sh ]; then
-  /opt/crave/resync.sh
-else
-  repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
-fi
+# Resync the repositories
+/opt/crave/resync.sh
 
 #customs
 rm -rf frameworks/base
