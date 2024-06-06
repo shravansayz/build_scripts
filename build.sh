@@ -24,4 +24,4 @@ source build/envsetup.sh
 genkeys shravankumarsayz@gmail.com
 riseup RMX1901 user
 make install clean
-rise sb
+rise b
