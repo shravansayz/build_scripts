@@ -23,4 +23,5 @@ git clone https://github.com/shravansayz/android_frameworks_base_rise.git -b fou
 source build/envsetup.sh
 genkeys shravankumarsayz@gmail.com
 riseup RMX1901 user
+make install clean
 rise sb
