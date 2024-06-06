@@ -21,7 +21,7 @@ git clone https://github.com/shravansayz/vendor_lineage-priv vendor/lineage-priv
 
 # Set up build environment
 source build/envsetup.sh
-
+genkeys shravankumarsayz@gmail.com
 # Lunch configuration
 riseup RMX1901 user
 
@@ -29,4 +29,4 @@ riseup RMX1901 user
 make installclean
 
 # Build
-rise b
+rise sb
