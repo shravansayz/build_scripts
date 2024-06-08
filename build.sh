@@ -16,9 +16,6 @@ curl https://raw.githubusercontent.com/sounddrill31/docker-images/04449990912b9d
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/android_frameworks_base_rise.git -b fourteen frameworks/base --depth=1
 
-# Private Keys
-#git clone https://github.com/shravansayz/vendor_lineage-priv vendor/lineage-priv
-
 # Set up build environment
 source build/envsetup.sh
 riseup RMX1901 user
