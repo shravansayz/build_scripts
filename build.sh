@@ -23,4 +23,6 @@ rm -rf vendor/lineage-priv && git clone https://github.com/shravansayz/private_k
 source build/envsetup.sh
 riseup RMX1901 user
 make install clean
+# Git-lfs
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
 rise b
