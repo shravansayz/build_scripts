@@ -14,7 +14,7 @@ curl https://raw.githubusercontent.com/sounddrill31/docker-images/04449990912b9d
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/android_frameworks_base_evox.git -b udc frameworks/base --depth=1
+git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
 # Set up build environment
 source build/envsetup.sh
