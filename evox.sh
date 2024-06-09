@@ -18,6 +18,6 @@ git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc framewo
 
 # Set up build environment
 source build/envsetup.sh
-lineage_RMX1901-userdebug
+lunch lineage_RMX1901-userdebug
 make install clean
 m evolution
