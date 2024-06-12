@@ -1,5 +1,5 @@
 #clone private keys
-rm -rf ~/.android-certs && git clone https://github.com/shravansayz/private-key -b main ~/.android-certs
+rm -rf ~/.android-certs && git clone https://github.com/shravansayz/test_keys -b main ~/.android-certs
 
 #change root to the top of the tree
 croot
