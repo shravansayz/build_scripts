@@ -16,6 +16,9 @@ curl https://raw.githubusercontent.com/sounddrill31/docker-images/04449990912b9d
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
+# Private Keys
+git clone https://github.com/shravansayz/private_keys_evox.git vendor/evolution-priv
+
 # Set up build environment
 source build/envsetup.sh
 lunch lineage_RMX1901-userdebug
