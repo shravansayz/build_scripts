@@ -22,5 +22,5 @@ wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -
 # Set up build environment
 source build/envsetup.sh
 lunch lineage_RMX1901-userdebug
-make install clean
+#make install clean
 m evolution
