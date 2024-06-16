@@ -2,6 +2,8 @@
 
 # Removals
 rm -rf .repo/local_manifests
+rm -rf vendor/evolution-priv
+rm -rf frameworks/base
 
 # Initialize repo with specified manifest
 repo init -u https://github.com/Evolution-XYZ/manifest -b udc --git-lfs --depth=1
@@ -10,17 +12,25 @@ repo init -u https://github.com/Evolution-XYZ/manifest -b udc --git-lfs --depth=
 git clone https://github.com/shravansayz/local_manifests --depth 1 -b evox .repo/local_manifests
 
 # Sync the repositories
-curl https://raw.githubusercontent.com/sounddrill31/docker-images/04449990912b9d7ee594193883740037f0ac80a7/aosp/common/resync.sh | bash
+/opt/crave/resync.sh
 
 #customs
-rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
 # Private Keys
-wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/evolution-priv && rm keys.zip
+git clone https://github.com/shravansayz/private_keys_evox.git -b main vendor/evolution-priv
 
 # Set up build environment
 source build/envsetup.sh
-lunch lineage_RMX1901-userdebug
-#make install clean
+
+# Lunch configuration
+lunch lineage_RMX1901-user
+
+# Cleanup directories
+# make installclean
+
+# Git-lfs
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
+
+# Build
 m evolution
