@@ -3,7 +3,6 @@
 # Removals
 rm -rf .repo/local_manifests
 rm -rf vendor/evolution-priv
-rm -rf frameworks/base
 
 # Initialize repo with specified manifest
 repo init -u https://github.com/Evolution-XYZ/manifest -b udc --git-lfs --depth=1
@@ -15,6 +14,7 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b evox .repo
 /opt/crave/resync.sh
 
 #customs
+rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
 # Private Keys
