@@ -17,7 +17,7 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_derp.git -b 14 frameworks/base --depth=1
 
 # Private Keys
-wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/derp/signing/ && rm keys.zip
+wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/derp/signing/keys && rm keys.zip
 
 # Set up build environment
 source build/envsetup.sh
