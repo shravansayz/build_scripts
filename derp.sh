@@ -10,7 +10,7 @@ repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --depth=1 --git
 git clone https://github.com/shravansayz/local_manifests --depth 1 -b derp14 .repo/local_manifests
 
 # Sync the repositories
-curl https://raw.githubusercontent.com/sounddrill31/docker-images/04449990912b9d7ee594193883740037f0ac80a7/aosp/common/resync.sh | bash
+/opt/crave/resync.sh
 
 #customs
 rm -rf frameworks/base
