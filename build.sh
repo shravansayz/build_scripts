@@ -16,12 +16,11 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b pos14 .rep
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen frameworks/base --depth=1
 
+# Private Keys
+wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/aosp/signing/keys && rm keys.zip
+
 export BUILD_USERNAME=shravan
 export BUILD_HOSTNAME=crave
-subject='/C=IN/ST=Haryana/L=Panipat/O=Android/OU=Android/CN=Android/emailAddress=shravansayz@gmail.com'
-for x in releasekey platform shared media networkstack nfc verity otakey testkey sdk_sandbox bluetooth; do \
-  echo '' |./development/tools/make_key vendor/aosp/signing/keys/$x "$subject"; \
-done
 
 #build
 source build/envsetup.sh
