@@ -14,11 +14,11 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b evox .repo
 /opt/crave/resync.sh
 
 #customs
-rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
+#rm -rf frameworks/base
+#git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
 # Private Keys
-git clone https://github.com/shravansayz/private_keys_evox.git -b main vendor/evolution-priv
+git clone https://github.com/shravansayz/private_keys_evox.git -b test vendor/evolution-priv
 
 # Set up build environment
 source build/envsetup.sh
@@ -27,10 +27,10 @@ source build/envsetup.sh
 lunch lineage_RMX1901-user
 
 # Cleanup directories
-# make installclean
+make installclean
 
 # Git-lfs
-repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
+#repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
 
 # Build
 m evolution
