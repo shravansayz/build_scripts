@@ -18,7 +18,7 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b evox .repo
 #git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
 # Private Keys
-git clone https://github.com/shravansayz/private_keys_evox.git -b test vendor/evolution-priv
+git clone https://github.com/shravansayz/private_keys_evox.git -b evox vendor/evolution-priv
 
 # Set up build environment
 source build/envsetup.sh
