@@ -14,8 +14,8 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b evox .repo
 /opt/crave/resync.sh
 
 #customs
-#rm -rf frameworks/base
-#git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
+rm -rf frameworks/base
+git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
 # Private Keys
 git clone https://github.com/shravansayz/private_keys_evox.git -b evox vendor/evolution-priv
