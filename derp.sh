@@ -14,7 +14,7 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b derp14 .re
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_derp.git -b 14 frameworks/base --depth=1
+git clone https://github.com/kaderbava/frameworks_base_derp.git -b 14-qpr3 frameworks/base --depth=1
 
 # Private Keys
 wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/derp/signing/keys && rm keys.zip
