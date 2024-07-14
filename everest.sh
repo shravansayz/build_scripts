@@ -17,7 +17,7 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_eve.git -b qpr3 frameworks/base --depth=1
 
 # Private Keys
-wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/aosp/signing/keys && rm keys.zip
+wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/everest/signing/keys && rm keys.zip
 
 export BUILD_USERNAME=shravan
 export BUILD_HOSTNAME=crave
