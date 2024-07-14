@@ -1,18 +1,29 @@
 #!/bin/bash
 
-export BUILD_USERNAME=shravan
-export BUILD_HOSTNAME=codespace
-# init and sync
+# Removals
 rm -rf .repo/local_manifests
-repo init -u https://github.com/ProjectEverest/android_manifest -b qpr2 --git-lfs
-git clone https://github.com/shravansayz/local_manifests.git -b everest .repo/local_manifests
+
+# Initialize repo with specified manifest
+repo init -u https://github.com/ProjectEverest/manifest -b qpr3 --git-lfs
+
+# Clone local_manifests repository
+git clone https://github.com/shravansayz/local_manifests --depth 1 -b everest .repo/local_manifests
+
+# Sync the repositories
 /opt/crave/resync.sh
 
-# build rom
-source build/envsetup.sh
-lunch everest_RMX1901-userdebug
-m installclean
-mka bacon
+#customs
+rm -rf frameworks/base
+git clone https://github.com/shravansayz/frameworks_base_eve.git -b qpr3 frameworks/base --depth=1
 
-# crave build command
-# crave run --no-patch "rm -rf everest.sh && wget https://raw.githubusercontent.com/shravansayz/scripts/main/everest.sh && chmod +x everest.sh && bash everest.sh"
+# Private Keys
+wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/aosp/signing/keys && rm keys.zip
+
+export BUILD_USERNAME=shravan
+export BUILD_HOSTNAME=crave
+
+#build
+source build/envsetup.sh
+lunch everest_RMX1901-user
+make installclean
+make bacon
