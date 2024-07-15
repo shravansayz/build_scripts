@@ -17,6 +17,7 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_eve.git -b qpr3 frameworks/base --depth=1
 
 # Private Keys
+rm -rf vendor/everest/signing
 git clone https://github.com/shravansayz/test_keys.git -b blaze vendor/everest/signing
 
 export BUILD_USERNAME=shravan
