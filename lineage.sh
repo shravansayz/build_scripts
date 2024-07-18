@@ -17,6 +17,7 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/android_frameworks_base_los21.git -b lineage-21.0 frameworks/base --depth=1
 
 #Private Keys
+rm -rf vendor/lineage-priv
 git clone https://github.com/shravansayz/private_keys.git -b los21 vendor/lineage-priv
 
 export BUILD_USERNAME=shravan
