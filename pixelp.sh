@@ -17,7 +17,8 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_pixelpro.git -b fourteen-qpr3 frameworks/base --depth=1
 
 # Private Keys
-git clone https://github.com/shravansayz/test_keys.git -b main vendor/aosp/signing/keys
+rm -rf vendor/aosp/signing
+git clone https://github.com/shravansayz/test_keys.git -b main vendor/aosp/signing
 
 export BUILD_USERNAME=shravan
 export BUILD_HOSTNAME=crave
