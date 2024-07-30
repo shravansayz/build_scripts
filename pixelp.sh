@@ -4,7 +4,7 @@
 rm -rf .repo/local_manifests
 
 # Initialize repo with specified manifest
-repo init -u https://github.com/Project-PixelStar/manifest -b 14-qpr3
+repo init -u https://github.com/Project-PixelStar/manifest -b 14-qpr3 --depth=1
 
 # Clone local_manifests repository
 git clone https://github.com/shravansayz/local_manifests --depth 1 -b pixelp14 .repo/local_manifests
@@ -18,7 +18,7 @@ git clone https://github.com/shravansayz/frameworks_base_pixelstar.git -b 14-qpr
 
 # Private Keys
 rm -rf vendor/pixelstar/signing
-git clone https://github.com/shravansayz/private_keys.git -b pixelpro vendor/pixelstar/signing
+git clone https://github.com/shravansayz/private_keys.git -b pixelpro vendor/pixelstar/signing --depth=1
 
 export BUILD_USERNAME=shravan
 export BUILD_HOSTNAME=crave
