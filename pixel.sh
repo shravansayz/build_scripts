@@ -25,6 +25,6 @@ export BUILD_HOSTNAME=crave
 
 #build
 source build/envsetup.sh
-lunch aosp_RMX1901-ap2a-userdebug
+lunch aosp_RMX1901-ap2a-user
 make installclean
 mka bacon
