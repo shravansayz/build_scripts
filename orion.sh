@@ -25,6 +25,6 @@ export BUILD_HOSTNAME=crave
 
 #build
 source build/envsetup.sh
-lunch lineage_RMX1901-ap2a-user
+lunch orion_RMX1901-ap2a-user
 m installclean
 mka space
