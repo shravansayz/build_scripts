@@ -14,7 +14,7 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b ext .repo/
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/android_frameworks_base_los.git -b lineage-21.0 frameworks/base --depth=1
+git clone https://github.com/sksayz5/android_frameworks_base_Los.git -b main frameworks/base --depth=1
 
 #Private Keys
 rm -rf vendor/lineage-priv
