@@ -12,9 +12,6 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b ext .repo/
 # Sync the repositories
 /opt/crave/resync.sh
 
-#customs
-rm -rf frameworks/base
-git clone https://github.com/sksayz5/frameworks_base_Los -b main frameworks/base --depth=1
 
 #Private Keys
 rm -rf vendor/lineage-priv
