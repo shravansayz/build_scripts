@@ -18,7 +18,8 @@ rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_evox.git -b udc frameworks/base --depth=1
 
 # Private Keys
-git clone https://github.com/shravansayz/private_keys_evox.git -b evox vendor/evolution-priv
+rm -rf vendor/evolution-priv
+git clone https://github.com/shravansayz/private_keys_evox.git -b rise vendor/evolution-priv
 
 # Set up build environment
 source build/envsetup.sh
@@ -28,9 +29,6 @@ lunch lineage_RMX1901-user
 
 # Cleanup directories
 make installclean
-
-# Git-lfs
-#repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
 
 # Build
 m evolution
