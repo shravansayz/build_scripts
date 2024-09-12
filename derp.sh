@@ -16,8 +16,12 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b derp14 .re
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_derp.git -b 14 frameworks/base --depth=1
 
-# Private Keys
-wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/derp/signing/keys && rm keys.zip
+#Private Keys
+rm -rf vendor/derp/signing
+git clone https://github.com/shravansayz/private_keys.git -b rise vendor/derp/signing
+
+export BUILD_USERNAME=shravan
+export BUILD_HOSTNAME=crave
 
 # Set up build environment
 source build/envsetup.sh
