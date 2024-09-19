@@ -4,7 +4,7 @@
 rm -rf .repo/local_manifests
 
 # Initialize repo with specified manifest
-repo init --depth=1 -u https://github.com/AfterlifeOS/android_manifest.git -b refs/tags/afterlife-7.1_r67 --git-lfs
+repo init --depth=1 -u https://github.com/AfterlifeOS/android_manifest.git -b 14 --git-lfs
 
 # Clone local_manifests repository
 git clone https://github.com/shravansayz/local_manifests --depth 1 -b afterlife .repo/local_manifests
