@@ -18,7 +18,7 @@ git clone https://github.com/shravansayz/frameworks_base_afterlife.git -b 14 fra
 
 #Private Keys
 rm -rf vendor/lineage-priv
-git clone https://github.com/shravansayz/private_keys.git -b rise vendor/lineage-priv
+git clone https://github.com/shravansayz/private_keys.git -b rise vendor/after-priv
 
 export BUILD_USERNAME=shravan
 export BUILD_HOSTNAME=crave
