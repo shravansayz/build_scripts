@@ -17,6 +17,6 @@ export BUILD_HOSTNAME=crave
 
 # Set up build environment
 source build/envsetup.sh
-lunch yaap_RMX1901-userdebug
+lunch yaap_RMX1901-user
 m installclean
 m yaap
