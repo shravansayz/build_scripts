@@ -20,6 +20,6 @@ repo forall -c 'git lfs install && git lfs pull'
 
 # Set up build environment
 source build/envsetup.sh
-lunch yaap_RMX1901-user
+lunch yaap_RMX1901-userdebug
 make installclean
 m yaap
