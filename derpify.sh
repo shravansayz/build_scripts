@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests
 repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 15
 
 # Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests.git --depth 1 -btest  .repo/local_manifests
+git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b test  .repo/local_manifests
 
 # Sync the repositories
 /opt/crave/resync.sh && /opt/crave/resync.sh
