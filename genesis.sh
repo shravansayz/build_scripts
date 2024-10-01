@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests
 repo init -u https://github.com/GenesisOS/manifest.git -b utopia-3.0 --git-lfs
 
 # Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b blaze  .repo/local_manifests
+git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b genesis  .repo/local_manifests
 
 # Sync the repositories
 /opt/crave/resync.sh && /opt/crave/resync.sh
