@@ -16,8 +16,6 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b rise .repo
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_rise.git -b fourteen frameworks/base --depth=1
 
-rm -rf frameworks/native
-git clone https://github.com/shravansayz/frameworks_native_rise.git -b fourteen frameworks/native --depth=1
 
 #Private Keys
 rm -rf vendor/lineage-priv
