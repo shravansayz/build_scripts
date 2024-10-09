@@ -15,6 +15,10 @@ git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b test  
 export BUILD_USERNAME=shravan
 export BUILD_HOSTNAME=crave
 
+#customs
+rm -rf frameworks/base
+git clone https://github.com/shravansayz/frameworks_base_derp.git -b 15 frameworks/base --depth=1
+
 # packages_apps_Settings
 rm -rf packages/apps/Settings
 git clone -b 15 https://github.com/kaderbava/packages_apps_Settings.git packages/apps/Settings
