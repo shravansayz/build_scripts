@@ -21,15 +21,13 @@ git clone https://github.com/shravansayz/frameworks_base_derp.git -b 15 framewor
 
 # packages_apps_Settings
 rm -rf packages/apps/Settings
-git clone -b 15 https://github.com/kaderbava/packages_apps_Settings.git packages/apps/Settings
+git clone -b 15 https://github.com/shravansayz/packages_apps_Settings.git packages/apps/Settings
 
 # audio-hal
 rm -rf hardware/qcom-caf/sdm845/audio
 git clone -b 15 https://github.com/Krtonia/android_hardware_qcom_audio.git hardware/qcom-caf/sdm845/audio
 
 
-# Git-lfs
-repo forall -c 'git lfs install && git lfs pull'
 
 # Set up build environment
 source build/envsetup.sh
