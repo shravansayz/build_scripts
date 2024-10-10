@@ -27,7 +27,9 @@ git clone -b 15 https://github.com/shravansayz/packages_apps_Settings.git packag
 rm -rf hardware/qcom-caf/sdm845/audio
 git clone -b 15 https://github.com/Krtonia/android_hardware_qcom_audio.git hardware/qcom-caf/sdm845/audio
 
-
+#Private Keys
+rm -rf vendor/derp/signing
+git clone https://github.com/shravansayz/private_keys.git -b rise vendor/derp/signing
 
 # Set up build environment
 source build/envsetup.sh
