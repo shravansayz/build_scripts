@@ -16,8 +16,6 @@ git clone https://github.com/shravansayz/local_manifests --depth 1 -b pos14 .rep
 rm -rf frameworks/base
 git clone https://github.com/shravansayz/frameworks_base_pos.git -b fourteen frameworks/base --depth=1
 
-rm -rf vendor/aosp
-git clone https://github.com/shravansayz/vendor_aosp.git -b fourteen vendor/aosp --depth=1
 
 rm -rf vendor/extra
 git clone https://github.com/shravansayz/vendor_extra.git -b master vendor/extra --depth=1
