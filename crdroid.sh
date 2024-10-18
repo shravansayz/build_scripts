@@ -18,7 +18,7 @@ git clone https://github.com/shravansayz/android_frameworks_base_crdroid.git -b 
 
 #Private Keys
 rm -rf vendor/lineage-priv
-git clone https://github.com/shravansayz/private_keys.git -b crdroid vendor/lineage-priv
+git clone https://github.com/shravansayz/private_keys.git -b rise vendor/lineage-priv
 
 export BUILD_USERNAME=shravan
 export BUILD_HOSTNAME=crave
