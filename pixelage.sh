@@ -26,6 +26,6 @@ export BUILD_HOSTNAME=crave
 
 #build
 source build/envsetup.sh
-lunch pixelage_RMX1901-ap3a-user
+lunch pixelage_RMX1901-ap4a-user
 mka installclean
 mka bacon
