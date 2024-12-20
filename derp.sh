@@ -8,8 +8,6 @@ repo forall -c 'git lfs pull' ; \
 export BUILD_USERNAME=shravan ; \
 export BUILD_HOSTNAME=android-build ; \
 export TZ=Asia/Kolkata ; \
-export DISABLE_STUB_VALIDATION=true ; \
-cd vendor/derp && curl -s https://raw.githubusercontent.com/shravansayz/ota-stuff/refs/heads/main/0001-tools-Generate-json-for-non-official-builds.patch > json.patch && git apply json.patch ; cd ../../ && \
 source build/envsetup.sh && \
 lunch derp_RMX1901-user && \
 make installclean ; \
