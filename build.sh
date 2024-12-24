@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf .repo/local_manifests && \
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-22.1 --git-lfs -g default,-mips,-darwin,-notdefault && \
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-22.1 --git-lfs && \
 git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b los22 .repo/local_manifests && \
 /opt/crave/resync.sh && \
 repo forall -c 'git lfs pull' ; \
