@@ -8,6 +8,7 @@ repo forall -c 'git lfs pull' ; \
 export BUILD_USERNAME=shravan ; \
 export BUILD_HOSTNAME=android-build ; \
 export TZ=Asia/Kolkata ; \
+cd kernel/realme/sdm710 && curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash - && curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next-susfs-4.9 && cd ../../.. && \
 source build/envsetup.sh && \
 lunch lineage_RMX1901-ap4a-user && \
 make installclean ; \
