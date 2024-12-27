@@ -1,36 +1,14 @@
 #!/bin/bash
 
-# Removals
-rm -rf .repo/local_manifests
-
-# Initialize repo with specified manifest
-repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
-
-# Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests --depth 1 -b evox .repo/local_manifests
-
-# Sync the repositories
-/opt/crave/resync.sh
-
-#customs
-rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_evox.git -b vic frameworks/base --depth=1
-
-# Private Keys
-rm -rf vendor/evolution-priv
-git clone https://github.com/shravansayz/private_keys.git -b rise vendor/evolution-priv
-
-# Git-lfs
-repo forall -c 'git lfs install && git lfs pull'
-
-# Set up build environment
-source build/envsetup.sh
-
-# Lunch configuration
-lunch lineage_RMX1901-ap3a-user
-
-# Cleanup directories
-make installclean
-
-# Build
+rm -rf .repo/local_manifests && \
+repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs && \
+git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b evox .repo/local_manifests && \
+/opt/crave/resync.sh && \
+repo forall -c 'git lfs pull' ; \
+export BUILD_USERNAME=shravan ; \
+export BUILD_HOSTNAME=android-build ; \
+export TZ=Asia/Kolkata ; \
+source build/envsetup.sh && \
+lunch lineage_RMX1901-ap4a-user && \
+make installclean ; \
 m evolution
