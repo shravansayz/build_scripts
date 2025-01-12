@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf .repo/local_manifests && \
-repo init -u https://github.com/The-Clover-Project/manifest.git -b 15-qpr1 --git-lfs && \
+repo init -u https://github.com/Shravan55555/clover_manifest.git -b 15-qpr1 --git-lfs && \
 git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b clo .repo/local_manifests && \
 /opt/crave/resync.sh && \
 repo forall -c 'git lfs pull' ; \
