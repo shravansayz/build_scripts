@@ -11,4 +11,4 @@ export TZ=Asia/Kolkata ; \
 source build/envsetup.sh && \
 lunch aosp_RMX1901-ap4a-user && \
 make installclean ; \
-mka bacon
+mka bacon && wget https://raw.githubusercontent.com/shravansayz/go-up/master/go-up && chmod +x go-up && ./go-up out/target/product/RMX1901/PixelOS*.zip
