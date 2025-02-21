@@ -10,4 +10,4 @@ export BUILD_HOSTNAME=android-build ; \
 export TZ=Asia/Kolkata ; \
 source build/envsetup.sh && \
 make installclean ; \
-axion RMX1901
+axion RMX1901 user
