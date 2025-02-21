@@ -9,5 +9,6 @@ export BUILD_USERNAME=shravan ; \
 export BUILD_HOSTNAME=android-build ; \
 export TZ=Asia/Kolkata ; \
 source build/envsetup.sh && \
+lunch lineage_RMX1901-ap4a-user && \
 make installclean ; \
-axion RMX1901 user
+mka bacon
