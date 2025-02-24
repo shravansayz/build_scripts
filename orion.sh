@@ -1,30 +1,41 @@
 #!/bin/bash
 
-# Removals
+# Exit on error
+set -e
+
+# Build configuration
+export BUILD_USERNAME="shravan"
+export BUILD_HOSTNAME="android-build"
+export TZ="Asia/Kolkata"
+
+# Clean and initialize repo
+echo "Initializing repository..."
 rm -rf .repo/local_manifests
+repo init -u https://github.com/OrionOS-Project/manifest -b vic --git-lfs
 
-# Initialize repo with specified manifest
-repo init -u https://github.com/OrionOS-prjkt/android -b 14.0 --git-lfs
+# Clone local manifests
+echo "Cloning local manifests..."
+git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b orion .repo/local_manifests
 
-# Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests --depth 1 -b orion .repo/local_manifests
-
-# Sync the repositories
+# Sync repositories
+echo "Syncing repositories..."
 /opt/crave/resync.sh
 
-#customs
-rm -rf frameworks/base
-git clone https://github.com/shravansayz/android_frameworks_base_orion.git -b 14.0 frameworks/base --depth=1
+# Pull LFS objects with error handling
+echo "Pulling LFS objects..."
+repo forall -c 'git lfs pull || echo "LFS pull failed for $REPO_PATH"'
 
-#Private Keys
-rm -rf vendor/lineage-priv
-git clone https://github.com/shravansayz/private_keys.git -b rise vendor/lineage-priv
-
-export BUILD_USERNAME=shravan
-export BUILD_HOSTNAME=crave
-
-#build
+# Setup build environment
+echo "Setting up build environment..."
 source build/envsetup.sh
-lunch orion_RMX1901-ap2a-user
-m installclean
-mka space
+
+# Configure build target
+lunch orion_RMX1901-ap4a-user
+
+# Clean build directory
+echo "Cleaning build directory..."
+make installclean
+
+# Start the build
+echo "Starting build process..."
+make orion
