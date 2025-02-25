@@ -8,25 +8,43 @@ echo "
   ❯ Builder: $BUILD_USERNAME
   ❯ $(date +%d-%m-%Y\ %H:%M:%S)
 ▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾▾"
-
 # Clean and initialize repo
 echo "
-[1/7] » Preparing workspace..."
+» Preparing workspace..."
 rm -rf .repo/local_manifests
 repo init -u https://github.com/OrionOS-Project/manifest -b vic --git-lfs
 echo "STATUS ❯ Repository Initialized ✓"
 
 # Clone local manifests
 echo "
-[2/7] » Setting up manifests..."
+» Setting up manifests..."
 git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b orion .repo/local_manifests
 echo "STATUS ❯ Manifests Connected ✓"
 
 # Sync repositories
 echo "
-[3/7] » Syncing source tree..."
+» Syncing source tree..."
 /opt/crave/resync.sh
 echo "STATUS ❯ Source Synchronized ✓"
+
+# Cherry-pick commit
+echo "
+» Cherry-picking required commit..."
+cd frameworks/base
+git fetch https://github.com/OrionOS-Project/frameworks_base 
+git cherry-pick 
+
+# Check if cherry-pick was successful
+if [ $? -eq 0 ]; then
+    echo "STATUS ❯ Commit Successfully Cherry-picked ✓"
+else
+    echo "STATUS ❯ Cherry-pick Failed! Resolving conflicts required ✗"
+    echo "NOTE: Please resolve conflicts manually, then run 'git cherry-pick --continue'"
+    exit 1
+fi
+
+# Return to root directory
+cd ../../
 
 # Build configuration
 export BUILD_USERNAME="shravan"
@@ -35,31 +53,30 @@ export TZ="Asia/Kolkata"
 
 # Setup build environment
 echo "
-[4/7] » Loading build tools..."
+» Loading build tools..."
 source build/envsetup.sh
 echo "STATUS ❯ Environment Active ✓"
 
 # Configure build target
 echo "
-[5/7] » Configuring device..."
+» Configuring device..."
 lunch orion_RMX1901-ap4a-user
 echo "STATUS ❯ Target Configured ✓"
 
 # Clean build directory
 echo "
-[6/7] » Cleaning build space..."
+» Cleaning build space..."
 make installclean
 echo "STATUS ❯ Workspace Ready ✓"
 
 # Start the build
 echo "
-[7/7] » Launching build process..."
+» Launching build process..."
 make orion
+
 echo "
-▸ BUILD SEQUENCE INITIATED
-  ❯ Started at: $(date +%H:%M:%S)
-  ❯ Codename: Hydroxide
+▸ BUILD SEQUENCE COMPLETED
   ❯ Device: RMX1901
   
-  < Building OrionOS with ⚡ >
+  < Building OrionOS >
 ▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴▴"
