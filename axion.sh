@@ -8,6 +8,6 @@ export BUILD_USERNAME=shravan ; \
 export BUILD_HOSTNAME=android-build ; \
 export TZ=Asia/Kolkata ; \
 source build/envsetup.sh && \
-axion RMX1901 user gms pico && \
+axion RMX1901 userdebug gms pico && \
 make installclean ; \
 ax -br
