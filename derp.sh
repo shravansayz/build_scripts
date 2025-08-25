@@ -8,6 +8,6 @@ export BUILD_USERNAME=shravan ; \
 export BUILD_HOSTNAME=crave ; \
 export TZ=Asia/Kolkata ; \
 source build/envsetup.sh && \
-lunch lineage_RMX1901-user && \
+lunch lineage_RMX1901-bp2a-user && \
 make installclean ; \
 mka derp
