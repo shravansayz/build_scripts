@@ -7,6 +7,7 @@ git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b derp16
 export BUILD_USERNAME=shravan ; \
 export BUILD_HOSTNAME=crave ; \
 export TZ=Asia/Kolkata ; \
+wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/lineage/signing/ && rm keys.zip && \
 source build/envsetup.sh && \
 lunch lineage_RMX1901-bp2a-user && \
 make installclean ; \
