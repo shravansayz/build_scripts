@@ -6,3 +6,7 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/buil
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/build_scripts/refs/heads/16/derp.sh | bash"
 ```
+# Lunaris Command:
+```
+crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/build_scripts/refs/heads/16/luna.sh | bash"
+```
