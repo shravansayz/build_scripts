@@ -10,3 +10,8 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/buil
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/build_scripts/refs/heads/16/luna.sh | bash"
 ```
+
+# Cherish Command:
+```
+crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/build_scripts/refs/heads/16/cherish.sh | bash"
+```
