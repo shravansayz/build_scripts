@@ -11,7 +11,7 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/buil
 crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/build_scripts/refs/heads/16/luna.sh | bash"
 ```
 
-# Cherish Command:
+# Infinity Command:
 ```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/build_scripts/refs/heads/16/cherish.sh | bash"
+crave run --no-patch -- "curl https://raw.githubusercontent.com/shravansayz/build_scripts/refs/heads/16/infinity.sh | bash"
 ```
