@@ -1,14 +1,16 @@
 #!/bin/bash
 
 rm -rf .repo/local_manifests && \
-repo init -u https://github.com/fiqri19102002/manifest.git -b fifteen --git-lfs && \
+repo init -u https://github.com/PixelOS-AOSP/android_manifest.git -b sixteen --git-lfs && \
 git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b pixel .repo/local_manifests && \
 /opt/crave/resync.sh && \
-repo forall -c 'git lfs pull' ; \
 export BUILD_USERNAME=shravan ; \
 export BUILD_HOSTNAME=android-build ; \
 export TZ=Asia/Kolkata ; \
+wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/lunaris-priv/ && rm keys.zip && \
+echo ">>> Applying frameworks/base patch..." && cd frameworks/base && (git log --oneline | grep -q "dt2w\|DT2W\|double.*tap" || (wget -O temp.patch "https://github.com/shravansayz/android_frameworks_base/commit/7809e13937efaf85b319bc28d3b88326342ec1df.patch" && (git apply temp.patch && git add . && git commit -m "Apply DT2W patch" || echo "Patch conflicts detected, continuing build...") && rm -f temp.patch)) && cd ../.. && echo ">>> Frameworks/base patch process completed!" && \
+wget https://github.com/shravansayz/local_manifests/raw/keys/keys.zip && unzip -o keys.zip -d vendor/lineage-priv/ && rm keys.zip && \
 source build/envsetup.sh && \
-lunch aosp_RMX1901-ap4a-user && \
+lunch custom_RMX1901-bp2a-user && \
 make installclean ; \
-mka bacon && wget https://raw.githubusercontent.com/shravansayz/go-up/master/go-up && chmod +x go-up && ./go-up out/target/product/RMX1901/PixelOS*.zip
+mka bacon
